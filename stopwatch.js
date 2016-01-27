@@ -13,7 +13,7 @@ function Stopwatch() {
 
   // Set start time to current time in miliseconds
   this.startTimer = function(){
-    startTime = new Date().getTime();
+      startTime = new Date().getTime();
     console.log(startTime);
 
   };
@@ -21,10 +21,30 @@ function Stopwatch() {
   // Set stop time to time stop btn cliecked and calculate the elapsed time in miliseconds
   this.stopTimer = function(){
     stopTime = new Date().getTime();
-    elapsed = stopTime - startTime;
+    elapsed += stopTime - startTime;
     console.log(elapsed);
+
+    var sec = Math.floor(elapsed/1000);
+
+    /*seconds*/
+    var s = sec%60;
+
+    /*hours*/
+    var hr = Math.floor(sec/3600);
+
+    /*mins*/
+    var min = sec%3600;
+    var m= Math.floor(min/60);
+    console.log([hr,m,s]);
+
   };
 
+  this.resetTimer = function(){
+    startTime = 0;
+    elapsed = 0;
+    stopTime = 0;
+    console.log(startTime, elapsed, stopTime);
+  };
 
 }
 
