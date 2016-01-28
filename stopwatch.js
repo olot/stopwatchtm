@@ -9,7 +9,7 @@ function Stopwatch() {
   this.startTime = 0;
   this.elapsed = 0;
   this.stopTime = 0;
-  this.tmp=[0,0,0];
+  this.tmp=[00,00,00];
   this.tick = "";
 
 
