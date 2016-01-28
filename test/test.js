@@ -28,7 +28,21 @@ test("when user click stop, set the stoptime var to the current time", function(
   equal(Math.round(watch.stopTime/100)*100, current);
 });
 
-test("", function(){
-  setTimeout(function(){ alert("Hello"); }, 3000);
-  equal(watch.elapsed, diff);
+test("on clicking ´stop´ the time elapsed should be calculated", function(assert){
+  //start watch
+
+  var done = assert.async();
+  watch.startTimer();
+  setTimeout(function(){
+    watch.stopTimer();
+    console.log("stop"+watch.stopTime); done();
+  }, 5000);
+
+
+  console.log("elpased"+watch.elapsed);
+
+
+    assert.equal(watch.elapsed, 5000);
+
+
 });
