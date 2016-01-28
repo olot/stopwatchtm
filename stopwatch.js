@@ -9,48 +9,60 @@ function Stopwatch() {
   this.startTime = 0;
   this.elapsed = 0;
   this.stopTime = 0;
+  this.tmp=[0,0,0];
+  this.tick = "";
+
 
   // Set start time to current time in miliseconds
   this.startTimer = function(){
-    self.startTime = new Date().getTime();
-    console.log(self.startTime);
+
+
+    self.tick=setInterval(function(){
+      var h = self.tmp[0];
+      var m = self.tmp[1]; //tmp.getMinutes();
+      var s = self.tmp[2];
+
+      var hDisplay = h;
+      var mDisplay = m;
+      var sDisplay = s;
+
+        if (h <= 9) {
+          hDisplay = "0" + h;
+        }
+        if (m <= 9) {
+          mDisplay = "0" + m;
+
+        }
+         if (s <= 9) {
+          sDisplay = "0" + s;
+        }
+
+        if(m >= 59 && s >= 59){
+          h ++;
+          m = 0;
+          s = 0;
+        }
+        else if(s >= 59) {
+          m++;
+          s=0;
+        } else {
+          s++;
+        }
+      self.tmp=[h,m,s];
+
+      document.getElementById("timer").innerHTML = hDisplay + ":" + mDisplay + ":" + sDisplay;
+    }, 1000);
   };
 
-  this.startTicker = function(){
-    var today = new Date();
-    var h = today.getHours();
-    var m = today.getMinutes();
-    var s = today.getSeconds();
-    document.getElementById("timer").innerHTML = h + ":" + m + ":" + s;
-    setTimeout(function(){this.startTicker(); }, 500);
-  };
 
   // Set stop time to time stop btn cliecked and calculate the elapsed time in miliseconds
   this.stopTimer = function(){
-    self.stopTime = new Date().getTime();
-    self.elapsed += self.stopTime - self.startTime;
-    console.log(self.elapsed);
-
-    var sec = Math.floor(self.elapsed/1000);
-
-    /*seconds*/
-    var s = sec%60;
-
-    /*hours*/
-    var hr = Math.floor(sec/3600);
-
-    /*mins*/
-    var min = sec%3600;
-    var m= Math.floor(min/60);
-    console.log([hr,m,s]);
-
+    clearInterval(self.tick);
   };
 
   this.resetTimer = function(){
-    startTime = 0;
-    elapsed = 0;
-    stopTime = 0;
-    console.log(startTime, elapsed, stopTime);
+    self.tmp = [0, 0, 0];
+      document.getElementById("timer").innerHTML = 0 + ":" + 0 + ":" + 0;
   };
 
 }
