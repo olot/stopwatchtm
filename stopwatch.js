@@ -3,28 +3,35 @@
 //to resume stopwatch user clicks resume
 //to reset user clicks reset
 
-
 // Decalring a  Stopwatch func
 function Stopwatch() {
-  this.timeStarted = 0;
+  var self = this;
   this.startTime = 0;
   this.elapsed = 0;
   this.stopTime = 0;
 
   // Set start time to current time in miliseconds
   this.startTimer = function(){
-      startTime = new Date().getTime();
-    console.log(startTime);
+    self.startTime = new Date().getTime();
+    console.log(self.startTime);
+  };
 
+  this.startTicker = function(){
+    var today = new Date();
+    var h = today.getHours();
+    var m = today.getMinutes();
+    var s = today.getSeconds();
+    document.getElementById("timer").innerHTML = h + ":" + m + ":" + s;
+    setTimeout(function(){this.startTicker(); }, 500);
   };
 
   // Set stop time to time stop btn cliecked and calculate the elapsed time in miliseconds
   this.stopTimer = function(){
-    stopTime = new Date().getTime();
-    elapsed += stopTime - startTime;
-    console.log(elapsed);
+    self.stopTime = new Date().getTime();
+    self.elapsed += self.stopTime - self.startTime;
+    console.log(self.elapsed);
 
-    var sec = Math.floor(elapsed/1000);
+    var sec = Math.floor(self.elapsed/1000);
 
     /*seconds*/
     var s = sec%60;
@@ -47,6 +54,7 @@ function Stopwatch() {
   };
 
 }
+
 
 // Create new Stopwatch
 var watch = new Stopwatch();
