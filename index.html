@@ -3,20 +3,15 @@
 
   <head>
     <meta charset="UTF-8">
-
     <title>Stopwatch</title>
-
     <link href="style.css" rel="stylesheet">
-
-    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
-    <script src="stopwatch.js"></script>
   </head>
 
   <body>
 
     <h1>Stopwatch by TM</h1>
 
-    <div class="container1"> <!-- start comtaier1-->
+    <div class="container1"> <!-- start container1-->
 
       <div id='timer'>00:00:00</div>
 
@@ -24,23 +19,24 @@
           <span id='hh'>Hours</span>
           <span id='mm'>Minutes</span>
           <span id='ss'>Seconds</span>
-      <!-- <span id='ms'>Centiseconds</span> -->
+
 
         </div>
 
-    </div> <!-- end comtaier1 -->
+    </div> <!-- end container1 -->
 
 
-    <div class="container2"> <!-- start comtaier2 -->
+    <div class="container2"> <!-- start contanier2 -->
       <div id='controls'>
-        <button onclick='watch.startTimer()' id='start'>Start</button>
-        <button onclick='watch.stopTimer();'  id='stop'>Stop</button>
-        <button onclick='watch.resetTimer()' id='reset'>Reset</button>
+        <button onclick="startTimer();" id='start'>Start</button>
+        <button onclick="stopTimer();" id='stop'>Stop</button>
+        <button onclick="resetTimer();" id='reset'>Reset</button>
       </div>
-    </div> <!-- end comtaier2 -->
+    </div> <!-- end container2 -->
 
-  
+
   </body>
-
+  <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+  <script src="stopwatch.js"></script>
 
 </html>
