@@ -17,7 +17,6 @@ function startTimer() {
       var m = elapsed[1];
       var s = elapsed[2];
 
-      //store hours, mins, secs in new variables. These will be displayed in the browser
       var hDisplay = h;
       var mDisplay = m;
       var sDisplay = s;

@@ -1,50 +1,63 @@
-#timer {
-  width: 460px;
-  font-size: 100px;
-  color: black;
-  padding: 25px;
-  border-radius: 10px;
-  position: relative;
-  align-content: center;
-}
 #labels {
   margin-top: -25px;
   z-index: 2;
-  color: black;
-  font-size: 12px;
+  color: #ffd3f4;
+  font-size: 20px;
+  text-align: center;
+
 }
 #hh {margin-left: 45px;}
 #mm {margin-left: 80px;}
 #ss {margin-left: 70px;}
 
 #controls {
-  margin-left:150px;
-  margin-top: 30px;
+
+  text-align: center;
+  margin-left:auto;
+  margin-right: auto;
 }
 
 h1{
-  align-content: center;
+  text-align: center;
+  background: -webkit-linear-gradient(#ffd3f4, #c190f9, #6423fc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 75px;
 }
 
-.container1 {
+
+
+.container2 #timer {
   margin: auto;
   width: 60%;
   border: none;
+  border-radius: 15px 50px;
   background-color: #e7e7e7;
+  opacity: 0.4;
+  filter: alpha(opacity=50);
   padding: 10px;
-  text-align: center
+  text-align: center;
+  font-size: 150px;
 }
 
-.container2 {
+
+.container3 {
   margin: auto;
   width: 60%;
   border: none;
   padding: 10px;
 }
+
+img {
+   display:block;
+   margin:auto;
+}
+
 
 button {
-  background-color: #e7e7e7;
+  background-color: #ffd3f4;
   border: none;
+  border-radius: 50%;
   color: black;
   padding: 15px 32px;
   text-align: center;
@@ -53,8 +66,20 @@ button {
   font-size: 16px;
   margin: 4px 2px;
   cursor: pointer;
+  font-family: gumball;
 }
 
-body, button {
-  font-family: 'arial';
+div {
+   font-family: gumball;
+}
+
+
+body {
+
+  background-image: url("images/space.jpg");
+}
+
+@font-face {
+    font-family: gumball;
+    src: url("font/The Amazing World of Gumball.ttf");
 }
